@@ -1,4 +1,3 @@
-// Prompts y alerts de bienvenida
 alert("Bienvenido al Botinero");
 let nombreUsuario = prompt("Por favor ingrese su nombre");
 while (nombreUsuario === "") {
@@ -7,7 +6,6 @@ while (nombreUsuario === "") {
 }
 alert("Hola " + nombreUsuario + ", un gusto verte");
 
-// Arrays de los productos
 const productos = [
   {
     nombre: "Botín Nike",
@@ -24,12 +22,19 @@ const productos = [
 ];
 
 const catalogo = () => {
-  let carrito = []; // Para almacenar los productos seleccionados
-  let total = 0; // Variable para el monto total de la compra
+  let carrito = [];
+  let total = 0;
 
   let mostrarCatalogo = prompt(
     "¿Estarías interesado en conocer nuestro catálogo?\nResponder con SI o NO"
   ).toUpperCase();
+
+  while (mostrarCatalogo !== "SI" && mostrarCatalogo !== "NO") {
+    alert("Por favor, selecciona una opción válida (SI o NO).");
+    mostrarCatalogo = prompt(
+      "¿Estarías interesado en conocer nuestro catálogo?\nResponder con SI o NO"
+    ).toUpperCase();
+  }
 
   if (mostrarCatalogo === "SI") {
     let opciones = "";
@@ -60,14 +65,22 @@ const catalogo = () => {
             alert(
               `¡Gracias por su compra, ${nombreUsuario}! Monto total: $${total}`
             );
-            break; // Salir del bucle
+            break;
           }
         }
       } else if (opciones === "ESC") {
-        alert("¡Hasta luego!");
-        break; // Salir del bucle
+        if (carrito.length > 0) {
+          alert(
+            `¡Gracias por su compra, ${nombreUsuario}! Monto total: $${total}`
+          );
+        } else {
+          alert("¡Hasta luego!");
+        }
+        break;
       }
     }
+  } else {
+    alert("¡Hasta luego!");
   }
 };
 
