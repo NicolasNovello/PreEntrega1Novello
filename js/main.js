@@ -27,3 +27,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Simulacion de inicio de sesion
+document.addEventListener("DOMContentLoaded", function () {
+  const registroDeFormulario = document.getElementById("loginForm");
+  const entradaDeNombre = document.getElementById("username");
+  const enlaceDeUsuario = document.querySelector(
+    ".barraNavegacion ul li:nth-child(2) a"
+  );
+
+  const usuarioRegistrado = localStorage.getItem("usuarioRegistrado");
+  if (usuarioRegistrado) {
+    enlaceDeUsuario.textContent = "Hola, " + usuarioRegistrado;
+  }
+
+  registroDeFormulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nombreDeUsuario = entradaDeNombre.value.trim();
+
+    if (!nombreDeUsuario) {
+      alert("Por favor, ingrese un nombre de usuario.");
+      return;
+    }
+
+    localStorage.setItem("usuarioRegistrado", nombreDeUsuario);
+
+    enlaceDeUsuario.textContent = "Hola, " + nombreDeUsuario;
+
+    alert("Inicio de sesión exitoso. ¡Hola, " + nombreDeUsuario + "!");
+
+    registroDeFormulario.reset();
+  });
+});
