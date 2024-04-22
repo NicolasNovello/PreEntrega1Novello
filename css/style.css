@@ -1,0 +1,112 @@
+/*Reseteo*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Barra de navegacion*/
+
+h1 {
+  color: azure;
+  font-size: 3.5rem;
+  padding-left: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: azure;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: black;
+}
+
+.barraNavegacion li {
+  display: inline-block;
+  padding: 2rem;
+}
+
+/*Titulos secundarios*/
+
+h2 {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+/*Imagenes*/
+.imagenes {
+  width: auto;
+  height: 300px;
+  border: solid;
+  border-radius: 5px;
+}
+
+.galeriaImagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cajas {
+  text-align: center;
+  border: solid;
+  border-radius: 0.625px;
+  padding: 1.25rem;
+  margin: 1rem;
+  background-color: black;
+}
+
+.cajas h3 {
+  font-size: 1.4rem;
+  color: azure;
+  margin-top: 0.5rem;
+}
+
+button {
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/*Carrito*/
+
+h4 {
+  font-size: 1.6rem;
+  padding: 1.5rem;
+}
+
+/*Color de pagina*/
+
+body {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+body.cambioDeColor {
+  background-color: black;
+  color: azure;
+}
+
+/*Usuario*/
+
+/*Final de pagina*/
+
+.finalDePagina h2 {
+  font-size: 1.4rem;
+  background-color: black;
+  color: azure;
+  padding: 2rem;
+}

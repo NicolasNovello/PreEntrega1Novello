@@ -3,10 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>El Botinero</title>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Segunda Pre-Entrega</h1>
+    <header>
+      <h1>El botinero</h1>
+      <nav class="barraNavegacion">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="html/usuario.html">Usuario</a></li>
+          <button class="colorDePagina">Modo oscuro</button>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h2>Nuestro catalogo</h2>
+      </div>
+      <section class="galeriaImagenes">
+        <div class="cajas">
+          <img
+            class="imagenes"
+            src="img/botin-adidas1.jpg"
+            alt="Botin Adidas"
+          />
+          <h3>Botin Adidas</h3>
+          <h3>$5.000</h3>
+          <h3><button>Agregar al carrito</button></h3>
+        </div>
+        <div class="cajas">
+          <img class="imagenes" src="img/botin-nike1.jpg" alt="Botin Nike" />
+          <h3>Botin Nike</h3>
+          <h3>$7.000</h3>
+          <h3><button>Agregar al carrito</button></h3>
+        </div>
+        <div class="cajas">
+          <img class="imagenes" src="img/botin-puma1.webp" alt="Botin Puma" />
+          <h3>Botin Puma</h3>
+          <h3>$3.500</h3>
+          <button>Agregar al carrito</button>
+        </div>
+      </section>
+      <section>
+        <div><h4>Carrito</h4></div>
+        <div><h4>No agregaste productos al carrito</h4></div>
+        <div><h4>Total de su compra: 0</h4></div>
+      </section>
+    </main>
+    <footer class="finalDePagina">
+      <h2>Todos los derechos reservados</h2>
+    </footer>
+
     <script src="./js/main.js"></script>
   </body>
 </html>
