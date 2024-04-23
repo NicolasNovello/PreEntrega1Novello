@@ -21,34 +21,39 @@
       <div>
         <h2>Nuestro catalogo</h2>
       </div>
-      <section class="galeriaImagenes">
-        <div class="cajas">
-          <img
-            class="imagenes"
-            src="img/botin-adidas1.jpg"
-            alt="Botin Adidas"
-          />
-          <h3>Botin Adidas</h3>
-          <h3>$5.000</h3>
-          <h3><button>Agregar al carrito</button></h3>
-        </div>
-        <div class="cajas">
-          <img class="imagenes" src="img/botin-nike1.jpg" alt="Botin Nike" />
-          <h3>Botin Nike</h3>
-          <h3>$7.000</h3>
-          <h3><button>Agregar al carrito</button></h3>
-        </div>
-        <div class="cajas">
-          <img class="imagenes" src="img/botin-puma1.webp" alt="Botin Puma" />
-          <h3>Botin Puma</h3>
-          <h3>$3.500</h3>
-          <button>Agregar al carrito</button>
-        </div>
+      <section>
+        <div id="productos" class="galeriaImagenes"></div>
       </section>
       <section>
-        <div><h4>Carrito</h4></div>
-        <div><h4>No agregaste productos al carrito</h4></div>
-        <div><h4>Total de su compra: 0</h4></div>
+        <h4 class="tituloCarrito">Carrito:</h4>
+        <div>
+          <div id="carritoSinNada">
+            <h4>No agregaste productos al carrito</h4>
+          </div>
+          <div class="productosDelCarrito ocultar" id="productosDelCarrito">
+            <div class="productoDelCc">
+              <h5>Botin Adidas</h5>
+              <p>5000</p>
+              <button class="botonCarrito">Eliminar</button>
+            </div>
+            <div class="productoDelCc">
+              <h5>Botin Nike</h5>
+              <p>7500</p>
+              <button class="botonCarrito">Eliminar</button>
+            </div>
+            <div class="productoDelCc">
+              <h5>Botin Puma</h5>
+              <p>3500</p>
+              <button class="botonCarrito">Eliminar</button>
+            </div>
+          </div>
+          <div>
+            <h4 class="totalCompra">
+              Total de su compra:
+              <p id="totalDelCarrito">$0</p>
+            </h4>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="finalDePagina">

@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 1rem;
   background-color: black;
 }
 
@@ -48,7 +48,6 @@ h2 {
 .imagenes {
   width: auto;
   height: 300px;
-  border: solid;
   border-radius: 5px;
 }
 
@@ -63,9 +62,10 @@ h2 {
 .cajas {
   text-align: center;
   border: solid;
-  border-radius: 0.625px;
+  border-radius: 1.5rem;
   padding: 1.25rem;
   margin: 1rem;
+  margin-bottom: 3rem;
   background-color: black;
 }
 
@@ -82,19 +82,13 @@ button {
   margin-top: 0.5rem;
   color: #000000;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #000000;
   color: azure;
   border: solid;
-}
-
-/*Carrito*/
-
-h4 {
-  font-size: 1.6rem;
-  padding: 1.5rem;
 }
 
 /*Color de pagina*/
@@ -111,12 +105,11 @@ body.cambioDeColor {
 /*Usuario*/
 #loginForm {
   margin-top: 2rem;
-  width: 500px; /* Ancho del formulario */
-  margin: 8rem auto 18.28rem;
-  /* Centrar el formulario horizontalmente */
-  border: solid; /* Borde del formulario */
-  padding: 20px; /* Espacio interno del formulario */
-  border-radius: 5px; /* Bordes redondeados */
+  width: 500px;
+  margin: 12rem auto 20.9rem;
+  border: solid;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 #loginForm label {
@@ -133,7 +126,7 @@ body.cambioDeColor {
 }
 
 #loginForm button {
-  width: 100%; /* Botón ocupa todo el ancho */
+  width: 100%;
   padding: 0.5rem 1rem;
   background-color: #3b5066;
   color: white;
@@ -144,6 +137,57 @@ body.cambioDeColor {
 #loginForm button:hover {
   background-color: #122233;
 }
+
+/*Carrito*/
+
+.tituloCarrito {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+#carritoSinNada h4 {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.productosDelCarrito {
+  display: inline-block;
+}
+
+.productoDelCc {
+  display: flex;
+  gap: 15rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: solid;
+  border-radius: 2rem;
+  font-size: 2rem;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.botonCarrito {
+  padding: 0.6rem;
+}
+
+.botonCarrito:hover {
+  background-color: #122233;
+  border: none;
+  cursor: pointer;
+}
+
+.ocultar {
+  display: none;
+}
+
+.totalCompra {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
 /*Final de pagina*/
 
 .finalDePagina h2 {

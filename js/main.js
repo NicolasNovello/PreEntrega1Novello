@@ -1,4 +1,42 @@
-// cambio de color de la pagina
+//Productos
+const botines = [
+  {
+    titulo: "Botines Adidas",
+    precio: 5000,
+    img: "./img/botin-adidas1.jpg",
+  },
+
+  {
+    titulo: "Botines Nike",
+    precio: 7000,
+    img: "./img/botin-nike1.jpg",
+  },
+
+  {
+    titulo: "Botines Puma",
+    precio: 3500,
+    img: "./img/botin-puma1.webp",
+  },
+];
+
+const productos = document.querySelector("#productos");
+const carritoVacio = document.querySelector("#carritoSinNada");
+const productosDelCarrito = document.querySelector("#productosDelCarrito");
+const totalCarrito = document.querySelector("#totalDelCarrito");
+
+botines.forEach((producto) => {
+  const div = document.createElement("div");
+  div.classList.add("cajas");
+  div.innerHTML = `
+  <img class="imagenes" src="${producto.img}" alt="${producto.titulo}">
+  <h3>${producto.titulo}</h3>
+  <h3>$${producto.precio}</h3>
+  <button>Agregar al carrito</button>
+  `;
+  productos.append(div);
+});
+
+//Cambio de color de la pagina
 
 const btnColorDePagina = document.querySelector(".colorDePagina");
 
