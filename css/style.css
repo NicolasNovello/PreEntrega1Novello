@@ -36,6 +36,15 @@ header {
   padding: 2rem;
 }
 
+button {
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+}
 /*Titulos secundarios*/
 
 h2 {
@@ -75,7 +84,7 @@ h2 {
   margin-top: 0.5rem;
 }
 
-button {
+.botonAgregar {
   font-size: 1.1rem;
   border-radius: 0.5rem;
   padding: 0.5rem;

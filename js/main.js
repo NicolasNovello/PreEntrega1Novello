@@ -1,4 +1,7 @@
 //Productos
+
+const carrito = [];
+
 const botines = [
   {
     titulo: "Botines Adidas",
@@ -24,6 +27,8 @@ const carritoVacio = document.querySelector("#carritoSinNada");
 const productosDelCarrito = document.querySelector("#productosDelCarrito");
 const totalCarrito = document.querySelector("#totalDelCarrito");
 
+//Se recorre el array
+
 botines.forEach((producto) => {
   const div = document.createElement("div");
   div.classList.add("cajas");
@@ -31,10 +36,31 @@ botines.forEach((producto) => {
   <img class="imagenes" src="${producto.img}" alt="${producto.titulo}">
   <h3>${producto.titulo}</h3>
   <h3>$${producto.precio}</h3>
-  <button>Agregar al carrito</button>
+ 
   `;
+  const botonDeAgregarProducto = document.createElement("button");
+  botonDeAgregarProducto.classList.add("botonAgregar");
+  botonDeAgregarProducto.innerText = "Agregar al carrito";
+
+  botonDeAgregarProducto.addEventListener("click", () => {
+    agregarCarrito(producto);
+  });
+
+  div.append(botonDeAgregarProducto);
   productos.append(div);
 });
+// pusheo al carrito
+const agregarCarrito = (producto) => {
+  const itemEncontrado = carrito.find(
+    (item) => item.titulo === producto.titulo
+  );
+  if (itemEncontrado) {
+    itemEncontrado.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+  console.log(carrito);
+};
 
 //Cambio de color de la pagina
 
