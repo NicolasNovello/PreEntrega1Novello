@@ -1,6 +1,12 @@
-//Productos
+let carritoEnLocal = JSON.parse(localStorage.getItem("carrito"));
+let carrito;
+if (carritoEnLocal) {
+  carrito = [...carritoEnLocal];
+} else {
+  carrito = [];
+}
 
-const carrito = [];
+//Productos
 
 const botines = [
   {
@@ -49,6 +55,33 @@ botines.forEach((producto) => {
   div.append(botonDeAgregarProducto);
   productos.append(div);
 });
+
+function carritoActualizado() {
+  if (carrito.length === 0) {
+    carritoVacio.classList.remove("ocultar");
+    productosDelCarrito.classList.class("ocultar");
+  } else {
+    carritoVacio.classList.add("ocultar");
+    productosDelCarrito.classList.remove("ocultar");
+
+    productosDelCarrito.innerHTML = "";
+
+    carrito.forEach((producto) => {
+      const div = document.createElement("div");
+      div.classList.add("productoDelCc");
+      div.innerHTML = `
+      
+      <h5>${producto.titulo}</h5>
+      <p>$${producto.precio}</p>
+      <p>Cantidad: ${producto.cantidad}</p>
+      <button class="botonCarrito">Eliminar</button>
+      
+      `;
+      productosDelCarrito.append(div);
+    });
+  }
+}
+
 // pusheo al carrito
 const agregarCarrito = (producto) => {
   const itemEncontrado = carrito.find(
@@ -59,8 +92,48 @@ const agregarCarrito = (producto) => {
   } else {
     carrito.push({ ...producto, cantidad: 1 });
   }
-  console.log(carrito);
+  carritoActualizado();
+  mostrarTotalCompra();
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 };
+
+// Función para eliminar un producto del carrito
+const eliminarProducto = (titulo) => {
+  const index = carrito.findIndex((producto) => producto.titulo === titulo);
+  if (index !== -1) {
+    if (carrito[index].cantidad > 1) {
+      carrito[index].cantidad--;
+    } else {
+      carrito.splice(index, 1);
+    }
+
+    if (carrito.length === 0) {
+      carritoVacio.classList.remove("ocultar");
+      productosDelCarrito.classList.add("ocultar");
+    }
+  }
+  carritoActualizado();
+  mostrarTotalCompra();
+};
+
+// Event listener para el boton eliminar
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("botonCarrito")) {
+    const titulo = event.target.parentElement.querySelector("h5").textContent;
+    eliminarProducto(titulo);
+  }
+});
+
+//calcular y mostrar el total de la compra
+const mostrarTotalCompra = () => {
+  const total = carrito.reduce((acc, producto) => {
+    return acc + producto.precio * producto.cantidad;
+  }, 0);
+  totalCarrito.textContent = `$${total};`;
+};
+
+mostrarTotalCompra();
+carritoActualizado();
 
 //Cambio de color de la pagina
 
