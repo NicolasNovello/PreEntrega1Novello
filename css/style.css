@@ -36,7 +36,7 @@ header {
   padding: 2rem;
 }
 
-button {
+.colorDePagina {
   font-size: 1.1rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -178,7 +178,13 @@ body.cambioDeColor {
 }
 
 .botonCarrito {
-  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 .botonCarrito:hover {
